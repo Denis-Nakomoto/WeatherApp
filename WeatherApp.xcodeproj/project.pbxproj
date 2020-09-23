@@ -13,6 +13,10 @@
 		9200C72425199A00008569B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9200C72225199A00008569B9 /* Main.storyboard */; };
 		9200C72625199A02008569B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9200C72525199A02008569B9 /* Assets.xcassets */; };
 		9200C72925199A02008569B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9200C72725199A02008569B9 /* LaunchScreen.storyboard */; };
+		9200C73225199A13008569B9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200C73125199A13008569B9 /* NetworkManager.swift */; };
+		9200C73825199B87008569B9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200C73725199B87008569B9 /* Weather.swift */; };
+		9200C73D2519AF91008569B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200C73C2519AF91008569B9 /* DetailViewController.swift */; };
+		9268ACA9251B096C002B6462 /* FirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268ACA8251B096C002B6462 /* FirstCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		9200C72525199A02008569B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9200C72825199A02008569B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9200C72A25199A02008569B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9200C73125199A13008569B9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9200C73725199B87008569B9 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		9200C73C2519AF91008569B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9268ACA8251B096C002B6462 /* FirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +66,41 @@
 			children = (
 				9200C71C25199A00008569B9 /* AppDelegate.swift */,
 				9200C71E25199A00008569B9 /* SceneDelegate.swift */,
-				9200C72025199A00008569B9 /* ViewController.swift */,
+				921EC569251A2FCA005E8583 /* ViewControllers */,
+				9200C73A25199B8F008569B9 /* Models */,
+				9200C73425199A22008569B9 /* Services */,
 				9200C72225199A00008569B9 /* Main.storyboard */,
 				9200C72525199A02008569B9 /* Assets.xcassets */,
 				9200C72725199A02008569B9 /* LaunchScreen.storyboard */,
 				9200C72A25199A02008569B9 /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		9200C73425199A22008569B9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9200C73125199A13008569B9 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9200C73A25199B8F008569B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9200C73725199B87008569B9 /* Weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		921EC569251A2FCA005E8583 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9268ACA8251B096C002B6462 /* FirstCell.swift */,
+				9200C72025199A00008569B9 /* ViewController.swift */,
+				9200C73C2519AF91008569B9 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +176,10 @@
 				9200C72125199A00008569B9 /* ViewController.swift in Sources */,
 				9200C71D25199A00008569B9 /* AppDelegate.swift in Sources */,
 				9200C71F25199A00008569B9 /* SceneDelegate.swift in Sources */,
+				9200C73D2519AF91008569B9 /* DetailViewController.swift in Sources */,
+				9200C73225199A13008569B9 /* NetworkManager.swift in Sources */,
+				9268ACA9251B096C002B6462 /* FirstCell.swift in Sources */,
+				9200C73825199B87008569B9 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
