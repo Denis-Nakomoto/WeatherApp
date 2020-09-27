@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Partly Cloudy & ‌Moon.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Partly Cloudy & ‌Moon@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Partly Cloudy & ‌Moon@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
