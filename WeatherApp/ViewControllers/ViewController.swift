@@ -43,30 +43,27 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         searchTextField.delegate = self
         getWeather(for: "Cupertino")
-        NetworkManager.shared.alamofireFetchWeather("Cupertino") { weather in
-            print (weather)
-        }
     }
     
     @IBAction func searchButtonPressed() {
         getWeather(for: searchTextField.text ?? "Paris")
     }
     
-    private func checkResponse(_ response: Int) {
-        if 0..<200 ~= response || 300...10000 ~= response{
-            self.showAlert(title: "Ошибка", message:("Получены неверные данные от сервера. Вводить город следует на латиннице"))
-        }
-        else {
-        }
-    }
+//    private func checkResponse(_ response: Int) {
+//        if (200..<300).contains(response) {
+//            print("Check RESPONSE \(response)")
+//        }
+//        else {
+//            self.showAlert(title: "Ошибка", message:("Получены неверные данные от сервера. Вводить город следует на латиннице"))
+//        }
+//    }
     
     private func getWeather(for city: String) {
-        NetworkManager.shared.fetchData(city) { weather in
+        NetworkManager.shared.alamofireFetchWeather(city) { weather in
             DispatchQueue.main.async {
                 self.parsedWeather = weather
                 self.setHeader(weather)
                 self.setBackgroundImage(weather)
-                // Алексей. Мне тоже этот монстр не нравиться
                 self.tableValues = [
                     String(format: "%.f", weather.visibility ?? ""),
                     (weather.name ?? ""),
@@ -82,13 +79,12 @@ class ViewController: UIViewController {
                     (weather.weather?.first?.description ?? "")
                 ]
                 self.tableView.reloadData()
-                print (weather)
             }
-        } httpResponse: { responseCode in
-            DispatchQueue.main.async {
-                self.checkResponse(responseCode)
-            }
+        } status: { statusCode in
+//            self.checkResponse(statusCode)
+            self.showAlert(title: "Ошибка", message:("Получены неверные данные от сервера. Вводить город следует на латиннице"))
         }
+        
     }
     // MARK: Set heder fuelds and image
     private func setHeader (_ weather: TopWeather) {
@@ -211,7 +207,7 @@ extension ViewController: UITextFieldDelegate {
         if textField.text != "" {
             return true
         } else {
-            textField.placeholder = "Type city name"
+            textField.placeholder = "Type city"
             return false
         }
     }
